@@ -22,3 +22,24 @@ window.onscroll = ()=>{
 
     header.classList.toggle('sticky',window.scrollY > 100);
 }
+
+// contact section
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    
+    event.preventDefault();
+    
+    let fullName = document.getElementById('full-name').value;
+    let email = document.getElementById('email').value;
+    let mobileNumber = document.getElementById('mobile-number').value;
+    let emailSubject = document.getElementById('email-subject').value;
+    let message = document.getElementById('message').value;
+    let mailtoLink = 'mailto:arjutuhin777@gmail.com' +
+                    '?subject=' + encodeURIComponent(emailSubject) +
+                    '&body=' + encodeURIComponent('Name: ' + fullName + '\n' +
+                                                 'Email: ' + email + '\n' +
+                                                 'Mobile Number: ' + mobileNumber + '\n\n' +
+                                                 'Message: ' + message);
+  
+    window.location.href = mailtoLink;
+});
